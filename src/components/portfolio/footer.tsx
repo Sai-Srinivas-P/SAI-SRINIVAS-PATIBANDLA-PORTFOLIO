@@ -27,15 +27,17 @@ export function Footer() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={codingProfiles[0].url}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
-          >
-            <BrandIcon name="github" className="size-4.5" />
-          </a>
+          {codingProfiles[0] ? (
+            <a
+              href={codingProfiles[0].url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+            >
+              <BrandIcon name="github" className="size-4.5" />
+            </a>
+          ) : null}
           <a
             href={profile.linkedin}
             target="_blank"
