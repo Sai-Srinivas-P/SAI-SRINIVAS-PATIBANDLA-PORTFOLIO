@@ -1,5 +1,6 @@
-import { Github, Linkedin, Code2, Terminal } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { navLinks, profile, codingProfiles } from "@/lib/portfolio-data";
+import { BrandIcon, type BrandIconName } from "./brand-icons";
 
 export function Footer() {
   const year = new Date().getFullYear();

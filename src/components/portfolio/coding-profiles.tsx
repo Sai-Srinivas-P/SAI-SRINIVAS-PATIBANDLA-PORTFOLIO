@@ -25,12 +25,12 @@ export function CodingProfiles() {
             >
               <span
                 className={cn(
-                  "grid size-16 place-items-center rounded-2xl border bg-muted/40 font-display text-lg font-bold ring-2 ring-inset transition-transform group-hover:scale-110",
+                  "grid size-16 place-items-center rounded-2xl border bg-muted/40 ring-2 ring-inset transition-transform group-hover:scale-110",
                   p.accent,
                   p.ring
                 )}
               >
-                {p.monogram}
+                <BrandIcon name={p.icon} className="size-7" />
               </span>
               <h3 className="font-display text-base font-semibold">{p.platform}</h3>
               <p className="font-mono text-xs text-muted-foreground">{p.username}</p>
