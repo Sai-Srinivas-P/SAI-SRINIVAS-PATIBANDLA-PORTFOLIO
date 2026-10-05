@@ -5,7 +5,7 @@ import { BrandIcon, type BrandIconName } from "./brand-icons";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-border/60 bg-card/40">
+    <footer className="relative z-10 border-t border-border/60 bg-card/40">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 py-12 sm:px-6">
         <a href="#home" className="flex items-center gap-2 font-display text-lg font-bold tracking-tight">
           <span className="grid size-8 place-items-center rounded-lg bg-primary/15 text-primary">
