@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, Phone, MapPin, Send, Copy, Check, Github, Linkedin, Code2, Terminal, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Copy, Check, Terminal, Loader2 } from "lucide-react";
 import { profile, codingProfiles } from "@/lib/portfolio-data";
+import { BrandIcon } from "./brand-icons";
 import { Section } from "./section";
 import { Reveal } from "./reveal";
 
@@ -131,7 +132,7 @@ export function Contact() {
               aria-label="GitHub"
               className="grid size-11 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
             >
-              <Github className="size-5" />
+              <BrandIcon name="github" className="size-5" />
             </a>
             <a
               href={profile.linkedin}
@@ -140,7 +141,7 @@ export function Contact() {
               aria-label="LinkedIn"
               className="grid size-11 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
             >
-              <Linkedin className="size-5" />
+              <BrandIcon name="linkedin" className="size-5" />
             </a>
             {codingProfiles.slice(1).map((p) => (
               <a
@@ -151,7 +152,7 @@ export function Contact() {
                 aria-label={p.platform}
                 className="grid size-11 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
               >
-                <Code2 className="size-5" />
+                <BrandIcon name={p.icon} className="size-5" />
               </a>
             ))}
           </div>
