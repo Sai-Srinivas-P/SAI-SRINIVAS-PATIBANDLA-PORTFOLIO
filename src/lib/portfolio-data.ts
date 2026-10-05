@@ -343,6 +343,7 @@ export const certifications = [
 export const codingProfiles = [
   {
     platform: "GitHub",
+    icon: "github" as const,
     username: "Sai-Srinivas-P",
     url: "https://github.com/Sai-Srinivas-P",
     monogram: "GH",
@@ -351,6 +352,7 @@ export const codingProfiles = [
   },
   {
     platform: "GeeksforGeeks",
+    icon: "geeksforgeeks" as const,
     username: "saideveloper145",
     url: "https://www.geeksforgeeks.org/profile/saideveloper145",
     monogram: "GfG",
@@ -359,6 +361,7 @@ export const codingProfiles = [
   },
   {
     platform: "LeetCode",
+    icon: "leetcode" as const,
     username: "CodeKing666",
     url: "https://leetcode.com/u/CodeKing666/",
     monogram: "LC",
@@ -367,6 +370,7 @@ export const codingProfiles = [
   },
   {
     platform: "HackerRank",
+    icon: "hackerrank" as const,
     username: "saidev15",
     url: "https://www.hackerrank.com/profile/saidev15",
     monogram: "HR",

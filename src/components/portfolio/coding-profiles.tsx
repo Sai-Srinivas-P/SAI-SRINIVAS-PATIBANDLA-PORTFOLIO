@@ -1,7 +1,8 @@
-import { Code2, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { codingProfiles } from "@/lib/portfolio-data";
 import { Section, SectionHeader } from "./section";
 import { Reveal } from "./reveal";
+import { BrandIcon } from "./brand-icons";
 import { cn } from "@/lib/utils";
 
 export function CodingProfiles() {
