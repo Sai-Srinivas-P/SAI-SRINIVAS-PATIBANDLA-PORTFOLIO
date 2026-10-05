@@ -28,8 +28,8 @@ export const profile = {
   email: "ping2saas145@gmail.com",
   phone: "+91 7799224679",
   location: "Hyderabad, Telangana",
-  github: "https://github.com/Sai-Developer-1405",
-  linkedin: "https://www.linkedin.com/",
+  github: "https://github.com/Sai-Srinivas-P",
+  linkedin: "https://www.linkedin.com/in/sai-srinivas145",
   resumePath: resumeAsset.url,
   resumeFileName: "SAI_SRINIVAS_PATIBANDLA_RESUME.pdf",
 };
