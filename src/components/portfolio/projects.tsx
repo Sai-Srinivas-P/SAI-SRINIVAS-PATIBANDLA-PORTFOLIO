@@ -48,7 +48,7 @@ export function Projects() {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {visible.map((project, i) => (
           <Reveal key={project.id} delay={(i % 3) * 90} className={cn(i === 0 && filter === "All" && "md:col-span-2 lg:col-span-1")}>
-            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card/70 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
+            <article className="spotlight tilt group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card/70 transition-all duration-300 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
