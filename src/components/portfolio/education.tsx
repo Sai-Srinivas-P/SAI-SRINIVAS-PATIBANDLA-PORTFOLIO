@@ -25,7 +25,7 @@ export function Education() {
                   }`}
                 >
                   <div className="sm:w-1/2">
-                    <article className="glass rounded-2xl p-6 transition-transform hover:-translate-y-1">
+                    <article className="spotlight tilt glass rounded-2xl p-6">
                       <div className="flex items-center justify-between gap-3">
                         <h3 className="font-display text-base font-semibold sm:text-lg">{item.title}</h3>
                         <span className="shrink-0 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-[11px] text-primary">
