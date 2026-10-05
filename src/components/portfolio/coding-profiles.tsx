@@ -21,7 +21,7 @@ export function CodingProfiles() {
               href={p.url}
               target="_blank"
               rel="noreferrer"
-              className="group flex h-full flex-col items-center gap-3 rounded-2xl border border-border bg-card/60 p-6 text-center transition-all hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+              className="spotlight tilt group flex h-full flex-col items-center gap-3 rounded-2xl border border-border bg-card/60 p-6 text-center transition-all hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
             >
               <span
                 className={cn(

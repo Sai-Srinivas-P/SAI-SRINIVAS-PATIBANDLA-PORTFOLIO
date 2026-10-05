@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FolderKanban, Download, Mail, Github, Linkedin } from "lucide-react";
 import { profile } from "@/lib/portfolio-data";
 import portraitAsset from "@/assets/sai-srinivas-portrait.png.asset.json";
@@ -24,15 +24,32 @@ export function Hero() {
     return () => clearInterval(id);
   }, []);
 
+  const sectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const onMove = (e: PointerEvent) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--px", String((e.clientX - r.left) / r.width - 0.5));
+      el.style.setProperty("--py", String((e.clientY - r.top) / r.height - 0.5));
+    };
+    el.addEventListener("pointermove", onMove);
+    return () => el.removeEventListener("pointermove", onMove);
+  }, []);
+  const par = (depth: number) => ({
+    transform: `translate3d(calc(var(--px, 0) * ${depth}px), calc(var(--py, 0) * ${depth}px), 0)`,
+    transition: "transform 0.4s cubic-bezier(0.22,1,0.36,1)",
+  });
+
   return (
-    <section id="home" className="dev-grid relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+    <section ref={sectionRef} id="home" className="dev-grid relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-primary/20 blur-[140px]"
+        className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-primary/20 blur-[140px] aurora"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 top-40 h-[380px] w-[380px] rounded-full bg-secondary/15 blur-[120px]"
+        className="pointer-events-none absolute -right-40 top-40 h-[380px] w-[380px] rounded-full bg-secondary/15 blur-[120px] aurora" style={{ animationDelay: "-6s" }}
       />
 
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr]">
@@ -42,8 +59,15 @@ export function Hero() {
           </p>
 
           <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Hi, I&apos;m
-            <span className="mt-1 block text-gradient">{profile.name}</span>
+            <span className="word-in" style={{ "--d": "0ms" } as React.CSSProperties}>Hi,</span>{" "}
+            <span className="word-in" style={{ "--d": "90ms" } as React.CSSProperties}>I&apos;m</span>
+            <span className="mt-1 block">
+              {profile.name.split(" ").map((w, i) => (
+                <span key={w} className="word-in text-gradient mr-[0.25em]" style={{ "--d": `${200 + i * 120}ms` } as React.CSSProperties}>
+                  {w}
+                </span>
+              ))}
+            </span>
           </h1>
 
           <p className="font-display text-xl font-semibold text-foreground/95 sm:text-2xl">{profile.role}</p>
@@ -106,10 +130,11 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-sm">
+        <div className="relative mx-auto w-full max-w-sm animate-scale-in">
           <div aria-hidden className="absolute inset-0 -m-6 rounded-full bg-primary/20 blur-3xl" />
+          <div aria-hidden className="spin-slow absolute inset-0 -m-2 rounded-full border-2 border-dashed border-secondary/30" />
           <div aria-hidden className="pulse-ring absolute inset-0 -m-4 rounded-full border border-primary/40" />
-          <div className="relative overflow-hidden rounded-full border border-primary/30 bg-gradient-to-b from-primary/10 to-transparent p-3">
+          <div style={par(-18)} className="relative overflow-hidden rounded-full border border-primary/30 bg-gradient-to-b from-primary/10 to-transparent p-3">
             <img
               src={portraitAsset.url}
               alt={`Professional photo of ${profile.name}`}
@@ -119,6 +144,7 @@ export function Hero() {
             />
           </div>
 
+          <div style={par(36)} className="pointer-events-none absolute inset-0">
           {heroChips.map((chip) => (
             <span
               key={chip.label}
@@ -127,6 +153,7 @@ export function Hero() {
               {chip.label}
             </span>
           ))}
+          </div>
 
           <div className="mt-8 rounded-xl border border-border bg-card/80 p-4 font-mono text-xs leading-relaxed shadow-xl shadow-black/30 backdrop-blur">
             <div className="flex items-center gap-1.5 pb-3">

@@ -10,6 +10,7 @@ import { CodingProfiles } from "@/components/portfolio/coding-profiles";
 import { Contact } from "@/components/portfolio/contact";
 import { Footer } from "@/components/portfolio/footer";
 import { profile } from "@/lib/portfolio-data";
+import { PointerFx } from "@/components/portfolio/fx";
 
 const description =
   "Sai Srinivas Patibandla — Aspiring Software Developer (Fresher) from Hyderabad. Full-stack, .NET, Java/Spring Boot, and AI/ML projects, certifications, and coding profiles.";
@@ -30,9 +31,10 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <PointerFx />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Education />

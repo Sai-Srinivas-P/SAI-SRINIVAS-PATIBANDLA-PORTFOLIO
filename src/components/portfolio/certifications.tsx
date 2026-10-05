@@ -15,7 +15,7 @@ export function Certifications() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {certifications.map((cert, i) => (
           <Reveal key={cert.name} delay={(i % 5) * 70}>
-            <article className="group flex h-full flex-col gap-2 rounded-2xl border border-border bg-card/60 p-5 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
+            <article className="spotlight tilt group flex h-full flex-col gap-2 rounded-2xl border border-border bg-card/60 p-5 transition-all hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
               <div className="flex items-start justify-between gap-2">
                 <span className="grid size-10 place-items-center rounded-xl border border-primary/30 bg-primary/10 text-primary transition-transform group-hover:scale-110">
                   <Award className="size-5" />
