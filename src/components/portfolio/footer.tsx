@@ -1,4 +1,4 @@
-import { Linkedin } from "lucide-react";
+import { Linkedin, Terminal } from "lucide-react";
 import { navLinks, profile, codingProfiles } from "@/lib/portfolio-data";
 import { BrandIcon, type BrandIconName } from "./brand-icons";
 
