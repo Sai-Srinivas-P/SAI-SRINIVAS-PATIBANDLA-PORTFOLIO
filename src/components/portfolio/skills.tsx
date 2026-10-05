@@ -15,7 +15,7 @@ const iconMap: Record<SkillCategory["icon"], LucideIcon> = {
 const accents = ["text-chart-1", "text-chart-2", "text-chart-3", "text-chart-4", "text-chart-5"];
 const accentBgs = ["bg-chart-1/10 border-chart-1/30", "bg-chart-2/10 border-chart-2/30", "bg-chart-3/10 border-chart-3/30", "bg-chart-4/10 border-chart-4/30", "bg-chart-5/10 border-chart-5/30"];
 // Bento spans for a 4-column grid (9 categories)
-const spans = ["md:col-span-2", "md:col-span-2 md:row-span-2", "", "", "md:col-span-2", "", "md:col-span-2", "md:col-span-2", ""];
+const spans = ["md:col-span-2", "md:col-span-2 md:row-span-2", "", "", "md:col-span-2", "", "", "md:col-span-2", "md:col-span-2"];
 
 const maxSkills = Math.max(...skillCategories.map((c) => c.skills.length));
 

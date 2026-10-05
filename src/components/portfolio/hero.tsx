@@ -63,8 +63,8 @@ export function Hero() {
             <span className="word-in" style={{ "--d": "90ms" } as React.CSSProperties}>I&apos;m</span>
             <span className="mt-1 block">
               {profile.name.split(" ").map((w, i) => (
-                <span key={w} className="word-in text-gradient" style={{ "--d": `${200 + i * 120}ms` } as React.CSSProperties}>
-                  {w}{" "}
+                <span key={w} className="word-in text-gradient mr-[0.25em]" style={{ "--d": `${200 + i * 120}ms` } as React.CSSProperties}>
+                  {w}
                 </span>
               ))}
             </span>
