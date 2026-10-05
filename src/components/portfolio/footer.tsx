@@ -27,7 +27,25 @@ export function Footer() {
         </nav>
 
         <div className="flex items-center gap-3">
-          {codingProfiles.map((p) => (
+          <a
+            href={codingProfiles[0].url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+          >
+            <BrandIcon name="github" className="size-4.5" />
+          </a>
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+          >
+            <Linkedin className="size-4.5" />
+          </a>
+          {codingProfiles.slice(1).map((p) => (
             <a
               key={p.platform}
               href={p.url}
@@ -39,15 +57,6 @@ export function Footer() {
               <BrandIcon name={p.icon as BrandIconName} className="size-4.5" />
             </a>
           ))}
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
-          >
-            <Linkedin className="size-4.5" />
-          </a>
         </div>
 
         <p className="text-center text-xs text-muted-foreground">
