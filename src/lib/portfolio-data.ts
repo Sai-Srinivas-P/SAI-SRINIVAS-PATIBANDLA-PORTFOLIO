@@ -343,8 +343,8 @@ export const certifications = [
 export const codingProfiles = [
   {
     platform: "GitHub",
-    username: "Sai-Developer-1405",
-    url: "https://github.com/Sai-Developer-1405",
+    username: "Sai-Srinivas-P",
+    url: "https://github.com/Sai-Srinivas-P",
     monogram: "GH",
     accent: "text-primary",
     ring: "ring-primary/40",
