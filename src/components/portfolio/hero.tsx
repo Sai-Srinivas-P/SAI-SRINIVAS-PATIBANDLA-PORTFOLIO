@@ -144,17 +144,16 @@ export function Hero() {
             />
           </div>
 
+          <div style={par(36)} className="pointer-events-none absolute inset-0">
           {heroChips.map((chip) => (
-            <span key={chip.label} className="contents">
             <span
               key={chip.label}
-              style={par(40)}
               className={`absolute z-10 rounded-full border px-3 py-1.5 font-mono text-xs font-semibold backdrop-blur-sm ${chip.className} ${chip.delay}`}
             >
               {chip.label}
             </span>
-            </span>
           ))}
+          </div>
 
           <div className="mt-8 rounded-xl border border-border bg-card/80 p-4 font-mono text-xs leading-relaxed shadow-xl shadow-black/30 backdrop-blur">
             <div className="flex items-center gap-1.5 pb-3">
