@@ -66,7 +66,7 @@ export function CountUp({ value, duration = 1600 }: { value: string; duration?: 
   const [ref, inView] = useInView<HTMLSpanElement>(0.4);
   const target = Number.parseFloat(value);
   const isNum = !Number.isNaN(target) && /^[\d.]+$/.test(value);
-  const decimals = isNum && value.includes(".") ? value.split(".")[1].length : 0;
+  const decimals = isNum && value.includes(".") ? (value.split(".")[1] ?? "").length : 0;
   const [n, setN] = useState(0);
   useEffect(() => {
     if (!inView || !isNum) return;

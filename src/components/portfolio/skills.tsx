@@ -79,7 +79,7 @@ export function Skills() {
       />
       <div className="grid gap-4 md:grid-cols-4">
         {skillCategories.map((category, i) => (
-          <Reveal key={category.title} delay={(i % 4) * 80} className={spans[i]}>
+          <Reveal key={category.title} delay={(i % 4) * 80} className={spans[i] ?? ""}>
             <SkillCard category={category} i={i} />
           </Reveal>
         ))}
