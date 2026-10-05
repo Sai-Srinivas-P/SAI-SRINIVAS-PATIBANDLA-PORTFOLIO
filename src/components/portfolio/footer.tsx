@@ -1,5 +1,6 @@
-import { Github, Linkedin, Code2, Terminal } from "lucide-react";
+import { Linkedin, Terminal } from "lucide-react";
 import { navLinks, profile, codingProfiles } from "@/lib/portfolio-data";
+import { BrandIcon, type BrandIconName } from "./brand-icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -26,15 +27,18 @@ export function Footer() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
-          >
-            <Github className="size-4.5" />
-          </a>
+          {codingProfiles.map((p) => (
+            <a
+              key={p.platform}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={p.platform}
+              className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+            >
+              <BrandIcon name={p.icon as BrandIconName} className="size-4.5" />
+            </a>
+          ))}
           <a
             href={profile.linkedin}
             target="_blank"
@@ -44,18 +48,6 @@ export function Footer() {
           >
             <Linkedin className="size-4.5" />
           </a>
-          {codingProfiles.slice(1).map((p) => (
-            <a
-              key={p.platform}
-              href={p.url}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={p.platform}
-              className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
-            >
-              <Code2 className="size-4.5" />
-            </a>
-          ))}
         </div>
 
         <p className="text-center text-xs text-muted-foreground">
