@@ -5,6 +5,8 @@ import { projects } from "@/lib/portfolio-data";
 import { Navbar } from "@/components/portfolio/navbar";
 import { Footer } from "@/components/portfolio/footer";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { PointerFx } from "@/components/portfolio/fx";
 
 export const Route = createFileRoute("/projects/$projectId")({
   head: ({ params }) => {
@@ -60,8 +62,9 @@ function ProjectDetail() {
 
   return (
     <div className="min-h-screen">
+      <PointerFx />
       <Navbar />
-      <main className="pt-16">
+      <main className="project-detail pt-20">
         <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6">
           <Link
             to="/"
@@ -71,7 +74,7 @@ function ProjectDetail() {
             Back to Projects
           </Link>
 
-          <div className="mt-6 overflow-hidden rounded-2xl border border-border shadow-2xl shadow-black/40">
+          <div className="project-cover mt-8 overflow-hidden border border-border">
             <img
               src={project.image}
               alt={`Abstract visual for ${project.title}`}
@@ -96,7 +99,7 @@ function ProjectDetail() {
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">{project.short}</p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <a
+            <Button asChild className="h-auto p-0"><a
               href={project.repo}
               target="_blank"
               rel="noreferrer"
@@ -104,7 +107,7 @@ function ProjectDetail() {
             >
               <Github className="size-4" />
               View on GitHub
-            </a>
+            </a></Button>
             <span className="font-mono text-xs text-muted-foreground">{project.filters.join(" · ")}</span>
           </div>
 
@@ -125,26 +128,26 @@ function ProjectDetail() {
           <div className="mt-10 border-b border-border">
             <div role="tablist" aria-label="Project information" className="flex gap-1 overflow-x-auto">
               {tabs.map((t) => (
-                <button
+                <Button
                   key={t.id}
                   type="button"
                   role="tab"
                   aria-selected={tab === t.id}
                   onClick={() => setTab(t.id)}
                   className={cn(
-                    "shrink-0 rounded-t-lg border-b-2 px-4 py-3 text-sm font-medium transition-colors",
+                    "h-auto shrink-0 rounded-t-lg border-b-2 bg-transparent px-4 py-3 text-sm font-medium shadow-none transition-colors hover:bg-accent",
                     tab === t.id
                       ? "border-primary text-primary"
                       : "border-transparent text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {t.label}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
 
-          <div role="tabpanel" className="py-8">
+          <div key={tab} role="tabpanel" className="py-8">
             {tab === "overview" ? (
               <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">{project.overview}</p>
             ) : null}
@@ -184,7 +187,7 @@ function ProjectDetail() {
             ) : null}
           </div>
 
-          <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-5">
+          <div className="mt-4 border-t border-primary/20 py-8">
             <h2 className="flex items-center gap-2 font-display text-sm font-semibold text-primary">
               <Layers className="size-4" />
               More from this stack

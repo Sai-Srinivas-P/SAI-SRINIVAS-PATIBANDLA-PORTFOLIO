@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 export function PointerFx() {
   const glowRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) return;
+    if (window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
     const onMove = (e: PointerEvent) => {
       cancelAnimationFrame(raf);
@@ -36,6 +36,7 @@ export function PointerFx() {
     window.addEventListener("pointermove", onMove, { passive: true });
     document.addEventListener("pointerout", onLeave, { passive: true });
     return () => {
+      cancelAnimationFrame(raf);
       window.removeEventListener("pointermove", onMove);
       document.removeEventListener("pointerout", onLeave);
     };

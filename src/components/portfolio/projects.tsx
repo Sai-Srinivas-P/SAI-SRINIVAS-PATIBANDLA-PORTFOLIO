@@ -5,6 +5,7 @@ import { projects, projectFilters, projectExperienceNote } from "@/lib/portfolio
 import { Section, SectionHeader } from "./section";
 import { Reveal } from "./reveal";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function Projects() {
   const [filter, setFilter] = useState<string>("All");
@@ -27,20 +28,20 @@ export function Projects() {
       <Reveal>
         <div className="mb-10 flex flex-wrap justify-center gap-2" role="group" aria-label="Filter projects by technology">
           {["All", ...projectFilters].map((f) => (
-            <button
+            <Button
               key={f}
               type="button"
               onClick={() => setFilter(f)}
               aria-pressed={filter === f}
               className={cn(
-                "rounded-full border px-4 py-1.5 text-xs font-semibold transition-all sm:text-sm",
+                "h-auto rounded-full border px-4 py-1.5 text-xs font-semibold shadow-none transition-all sm:text-sm",
                 filter === f
                   ? "border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/25"
                   : "border-border bg-card/50 text-muted-foreground hover:border-primary/40 hover:text-foreground"
               )}
             >
               {f}
-            </button>
+            </Button>
           ))}
         </div>
       </Reveal>

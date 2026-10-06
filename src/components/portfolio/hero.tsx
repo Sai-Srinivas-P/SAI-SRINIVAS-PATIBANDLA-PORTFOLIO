@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { FolderKanban, Download, Mail, Github, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { profile } from "@/lib/portfolio-data";
 import portraitAsset from "@/assets/sai-srinivas-portrait.png.asset.json";
-const portrait = portraitAsset.url;
 
 const heroChips = [
-  { label: ".NET", className: "left-[2%] top-[12%] text-chart-1 border-chart-1/40 bg-chart-1/10", delay: "float-slow" },
-  { label: "Java", className: "left-[-2%] top-[38%] text-chart-2 border-chart-2/40 bg-chart-2/10", delay: "float-slower" },
-  { label: "React", className: "left-[4%] top-[64%] text-primary border-primary/40 bg-primary/10", delay: "float-slow" },
-  { label: "Python", className: "right-[0%] top-[22%] text-chart-4 border-chart-4/40 bg-chart-4/10", delay: "float-slower" },
-  { label: "AI / ML", className: "right-[2%] top-[58%] text-secondary border-secondary/40 bg-secondary/10", delay: "float-slow" },
+  { label: ".NET", className: "left-[-2%] top-[15%]", delay: "float-slow" },
+  { label: "Python", className: "right-[8%] top-[4%]", delay: "float-slower" },
+  { label: "React", className: "left-[0%] bottom-[20%]", delay: "float-slow" },
+  { label: "AI / ML", className: "right-[-2%] bottom-[35%]", delay: "float-slower" },
 ];
 
 export function Hero() {
@@ -27,14 +26,16 @@ export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = sectionRef.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!el || window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) return;
     const onMove = (e: PointerEvent) => {
       const r = el.getBoundingClientRect();
       el.style.setProperty("--px", String((e.clientX - r.left) / r.width - 0.5));
       el.style.setProperty("--py", String((e.clientY - r.top) / r.height - 0.5));
     };
+    const reset = () => { el.style.setProperty("--px", "0"); el.style.setProperty("--py", "0"); };
     el.addEventListener("pointermove", onMove);
-    return () => el.removeEventListener("pointermove", onMove);
+    el.addEventListener("pointerleave", reset);
+    return () => { el.removeEventListener("pointermove", onMove); el.removeEventListener("pointerleave", reset); };
   }, []);
   const par = (depth: number) => ({
     transform: `translate3d(calc(var(--px, 0) * ${depth}px), calc(var(--py, 0) * ${depth}px), 0)`,
@@ -42,37 +43,28 @@ export function Hero() {
   });
 
   return (
-    <section ref={sectionRef} id="home" className="dev-grid relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-primary/20 blur-[140px] aurora"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-40 top-40 h-[380px] w-[380px] rounded-full bg-secondary/15 blur-[120px] aurora" style={{ animationDelay: "-6s" }}
-      />
-
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr]">
+    <section ref={sectionRef} id="home" className="noir-hero relative overflow-hidden">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[7fr_5fr]">
         <div className="flex flex-col items-start gap-6">
           <p className="font-mono text-sm text-primary">
             <span className="text-secondary">{"<"}</span> Hello, world <span className="text-secondary">{"/>"}</span>
           </p>
 
-          <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="hero-title font-light leading-[1.08]">
             <span className="word-in" style={{ "--d": "0ms" } as React.CSSProperties}>Hi,</span>{" "}
             <span className="word-in" style={{ "--d": "90ms" } as React.CSSProperties}>I&apos;m</span>
             <span className="mt-1 block">
               {profile.name.split(" ").map((w, i) => (
-                <span key={w} className="word-in text-gradient mr-[0.25em]" style={{ "--d": `${200 + i * 120}ms` } as React.CSSProperties}>
+                <span key={w} className="word-in text-gradient font-bold mr-[0.25em]" style={{ "--d": `${200 + i * 120}ms` } as React.CSSProperties}>
                   {w}
                 </span>
               ))}
             </span>
           </h1>
 
-          <p className="font-display text-xl font-semibold text-foreground/95 sm:text-2xl">{profile.role}</p>
+          <p className="font-display text-xl font-medium italic text-muted-foreground sm:text-2xl">{profile.role}</p>
 
-          <p className="text-sm font-medium text-secondary sm:text-base">{profile.tagline}</p>
+
 
 
           <p className="flex min-h-7 items-center gap-2 text-sm text-muted-foreground sm:text-base">
@@ -83,33 +75,27 @@ export function Hero() {
 
           <p className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">{profile.intro}</p>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <a
+          <div className="hero-actions flex flex-wrap items-center gap-3">
+            <Button asChild variant="ghost" className="h-auto p-0"><a
               href="#projects"
               className="glow-primary inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
             >
               <FolderKanban className="size-4" />
               View My Projects
-            </a>
-            <a
+            </a></Button>
+            <Button asChild variant="ghost" className="h-auto p-0"><a
               href={profile.resumePath}
               download={profile.resumeFileName}
               className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
             >
               <Download className="size-4" />
               Download Resume
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-semibold text-foreground/90 transition-colors hover:bg-accent"
-            >
-              <Mail className="size-4" />
-              Let&apos;s Connect
-            </a>
+            </a></Button>
+
           </div>
 
           <div className="flex items-center gap-3">
-            <a
+            <Button asChild variant="ghost" size="icon" className="size-11 p-0"><a
               href={profile.github}
               target="_blank"
               rel="noreferrer"
@@ -117,8 +103,8 @@ export function Hero() {
               className="grid size-11 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
             >
               <Github className="size-5" />
-            </a>
-            <a
+            </a></Button>
+            <Button asChild variant="ghost" size="icon" className="size-11 p-0"><a
               href={profile.linkedin}
               target="_blank"
               rel="noreferrer"
@@ -126,21 +112,19 @@ export function Hero() {
               className="grid size-11 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
             >
               <Linkedin className="size-5" />
-            </a>
+            </a></Button>
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-sm animate-scale-in">
-          <div aria-hidden className="absolute inset-0 -m-6 rounded-full bg-primary/20 blur-3xl" />
+        <div className="hero-visual relative mx-auto w-full max-w-sm">
           <div aria-hidden className="spin-slow absolute inset-0 -m-2 rounded-full border-2 border-dashed border-secondary/30" />
-          <div aria-hidden className="pulse-ring absolute inset-0 -m-4 rounded-full border border-primary/40" />
-          <div style={par(-18)} className="relative overflow-hidden rounded-full border border-primary/30 bg-gradient-to-b from-primary/10 to-transparent p-3">
+          <div style={par(-18)} className="relative overflow-hidden rounded-full border border-primary/30 bg-card p-2">
             <img
               src={portraitAsset.url}
               alt={`Professional photo of ${profile.name}`}
               width={1245}
               height={1280}
-              className="aspect-square w-full rounded-full object-cover object-top"
+              className="hero-portrait aspect-square w-full rounded-full object-cover object-top"
             />
           </div>
 
@@ -148,14 +132,14 @@ export function Hero() {
           {heroChips.map((chip) => (
             <span
               key={chip.label}
-              className={`absolute z-10 rounded-full border px-3 py-1.5 font-mono text-xs font-semibold backdrop-blur-sm ${chip.className} ${chip.delay}`}
+              className={`absolute z-10 rounded-sm border border-primary/40 bg-background px-3 py-1.5 font-mono text-xs font-semibold text-primary ${chip.className} ${chip.delay}`}
             >
               {chip.label}
             </span>
           ))}
           </div>
 
-          <div className="mt-8 rounded-xl border border-border bg-card/80 p-4 font-mono text-xs leading-relaxed shadow-xl shadow-black/30 backdrop-blur">
+          <div className="hero-code rounded-lg border border-primary/20 bg-card/95 p-5 font-mono text-[11px] leading-relaxed">
             <div className="flex items-center gap-1.5 pb-3">
               <span className="size-2.5 rounded-full bg-chart-5/70" />
               <span className="size-2.5 rounded-full bg-chart-3/70" />
