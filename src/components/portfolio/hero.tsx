@@ -95,7 +95,7 @@ export function Hero() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button asChild variant="ghost" className="h-auto p-0"><a
+            <Button asChild variant="ghost" size="icon" className="size-11 p-0"><a
               href={profile.github}
               target="_blank"
               rel="noreferrer"
@@ -104,7 +104,7 @@ export function Hero() {
             >
               <Github className="size-5" />
             </a></Button>
-            <Button asChild variant="ghost" className="h-auto p-0"><a
+            <Button asChild variant="ghost" size="icon" className="size-11 p-0"><a
               href={profile.linkedin}
               target="_blank"
               rel="noreferrer"

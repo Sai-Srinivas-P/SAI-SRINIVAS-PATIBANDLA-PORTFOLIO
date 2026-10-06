@@ -342,3 +342,8 @@ section:not(.noir-hero) .spotlight { border-radius: 8px; background-color: var(-
   .word-in { opacity: 1; filter: none; transform: none; }
   .reveal { opacity: 1; transform: none; }
 }
+
+@media (max-width: 639px) {
+  .noir-hero > div > div:first-child { gap: 18px; }
+  .noir-hero > div > div:first-child > p:last-of-type { font-size: 13px; line-height: 1.7; }
+}
