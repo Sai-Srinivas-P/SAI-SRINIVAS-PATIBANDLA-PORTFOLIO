@@ -12,3 +12,4 @@
 # Portfolio conventions
 - All portfolio content (projects, skills, certifications, profiles, contact) lives in `src/lib/portfolio-data.ts` — edit data there, never hardcode content in components.
 - Dark-only theme: tokens defined in `src/styles.css` :root; components use semantic tokens only.
+- Shared portfolio presentation and motion rules live in global semantic CSS, while the hero and project detail layouts use scoped classes; this keeps every page visually consistent without duplicating style logic.
