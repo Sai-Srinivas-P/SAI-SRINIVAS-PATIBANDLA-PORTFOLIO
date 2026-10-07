@@ -10,6 +10,6 @@
 - [x] Verify photo visibility and resume download.
 
 # Oceanic theme
-- [ ] Apply selected white and oceanic glassmorphism styling throughout.
-- [ ] Add ocean-tech wallpapers to opening, sections, and project pages.
-- [ ] Verify readability, motion, photo visibility, and navigation.
+- [x] Apply selected white and oceanic glassmorphism styling throughout.
+- [x] Add ocean-tech wallpapers to opening, sections, and project pages.
+- [x] Verify readability, motion, photo visibility, and navigation.
