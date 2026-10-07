@@ -7,6 +7,7 @@ import { Footer } from "@/components/portfolio/footer";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { PointerFx } from "@/components/portfolio/fx";
+import { Wallpaper } from "@/components/portfolio/wallpaper";
 
 export const Route = createFileRoute("/projects/$projectId")({
   head: ({ params }) => {
@@ -65,6 +66,7 @@ function ProjectDetail() {
       <PointerFx />
       <Navbar />
       <main className="project-detail pt-20">
+        <Wallpaper />
         <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6">
           <Link
             to="/"

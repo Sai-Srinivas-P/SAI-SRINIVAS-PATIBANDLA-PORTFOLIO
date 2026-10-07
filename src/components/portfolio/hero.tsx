@@ -3,6 +3,7 @@ import { FolderKanban, Download, Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/lib/portfolio-data";
 import portraitAsset from "@/assets/sai-srinivas-portrait.png.asset.json";
+import { Wallpaper } from "./wallpaper";
 
 const heroChips = [
   { label: ".NET", className: "left-[-2%] top-[15%]", delay: "float-slow" },
@@ -44,6 +45,7 @@ export function Hero() {
 
   return (
     <section ref={sectionRef} id="home" className="noir-hero relative overflow-hidden">
+      <Wallpaper variant="tech" priority />
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[7fr_5fr]">
         <div className="flex flex-col items-start gap-6">
           <p className="font-mono text-sm text-primary">

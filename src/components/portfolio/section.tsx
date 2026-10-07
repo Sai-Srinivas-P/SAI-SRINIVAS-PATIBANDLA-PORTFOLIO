@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./reveal";
+import { Wallpaper } from "./wallpaper";
 
 export function Section({
   id,
@@ -12,7 +13,8 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className={cn("relative py-20 sm:py-24", className)}>
+    <section id={id} className={cn("ocean-section relative py-20 sm:py-24", className)}>
+      <Wallpaper variant={id === "skills" || id === "profiles" ? "tech" : "current"} />
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">{children}</div>
     </section>
   );

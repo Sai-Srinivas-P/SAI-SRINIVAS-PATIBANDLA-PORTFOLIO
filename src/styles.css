@@ -5,9 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — dark developer portfolio.
- * Near-black navy surfaces, electric blue primary, violet accent.
- * All colors in oklch; mapped in @theme inline.
+ * Oceanic Glassmorphism — white surfaces and ocean-blue accents.
+ * Semantic tokens shared by all portfolio sections and pages.
  */
 
 @theme inline {
@@ -49,31 +48,37 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #050505;
-  --foreground: #e5e5e5;
-  --card: #151515;
-  --card-foreground: #e5e5e5;
-  --popover: #0a0a0a;
-  --popover-foreground: #e5e5e5;
-  --primary: #D4AF37;
-  --primary-foreground: #050505;
-  --secondary: #F5E6AD;
-  --secondary-foreground: #050505;
-  --muted: #242424;
-  --muted-foreground: #a0a0a0;
-  --accent: #282419;
-  --accent-foreground: #F5E6AD;
-  --destructive: oklch(0.68 0.18 25);
-  --destructive-foreground: #e5e5e5;
-  --border: color-mix(in srgb, var(--foreground) 12%, transparent);
-  --input: color-mix(in srgb, var(--foreground) 18%, transparent);
-  --ring: #D4AF37;
-  --chart-1: #D4AF37;
-  --chart-2: #F5E6AD;
-  --chart-3: #C5A028;
-  --chart-4: #B5B39E;
-  --chart-5: #A0A0A0;
-  --gold-end: #C5A028;
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+  --primary: #0284c7;
+  --primary-foreground: #ffffff;
+  --secondary: #0891b2;
+  --secondary-foreground: #ffffff;
+  --muted: #f1f5f9;
+  --muted-foreground: #475569;
+  --accent: #e0f2fe;
+  --accent-foreground: #0369a1;
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #0284c7;
+  --chart-1: #0284c7;
+  --chart-2: #0891b2;
+  --chart-3: #0369a1;
+  --chart-4: #0d9488;
+  --chart-5: #64748b;
+  --gold-end: #06b6d4;
+  --code-background: #0f172a;
+  --code-muted: #cbd5e1;
+  --code-blue: #38bdf8;
+  --code-cyan: #67e8f9;
+  --code-string: #7dd3fc;
+  --wallpaper-overlay: linear-gradient(115deg, color-mix(in srgb, var(--card) 90%, transparent), color-mix(in srgb, var(--card) 62%, transparent) 62%, color-mix(in srgb, var(--accent) 42%, transparent));
   --shadow-editorial: 0 18px 42px -24px color-mix(in srgb, var(--primary) 24%, transparent);
 }
 
@@ -112,7 +117,7 @@
 }
 
 @utility glass {
-  background: oklch(1 0 0 / 4%);
+  background: color-mix(in srgb, var(--card) 88%, transparent);
   border: 1px solid var(--color-border);
   backdrop-filter: blur(14px);
 }
@@ -267,7 +272,7 @@
   .cursor-glow { display: none; }
 }
 
-/* Minimal Noir: selected cover composition and shared editorial rhythm. */
+/* Oceanic Glassmorphism: selected composition and shared rhythm. */
 body { letter-spacing: 0; }
 h1, h2, h3, h4, button, a, p, span { letter-spacing: 0; }
 ::selection { background: var(--primary); color: var(--primary-foreground); }
@@ -275,17 +280,20 @@ h1, h2, h3, h4, button, a, p, span { letter-spacing: 0; }
 .noir-hero {
   padding-top: 108px;
   padding-bottom: 56px;
-  background-image: radial-gradient(circle at 2px 2px, color-mix(in srgb, var(--primary) 9%, transparent) 1px, transparent 0);
-  background-size: 40px 40px;
+  isolation: isolate;
 }
-.hero-title { font-size: 64px; max-width: 640px; }
+.hero-title { font-size: 60px; max-width: 640px; font-weight: 700; }
 .noir-hero > div { gap: 40px; }
-.hero-visual { display: grid; gap: 28px; margin-bottom: 0; }
-.hero-photo { width: min(100%, 320px); aspect-ratio: 1; margin-inline: auto; }
+.hero-visual { display: grid; gap: 40px; margin-bottom: 0; }
+.hero-photo { width: min(100%, 288px); aspect-ratio: 1; margin-inline: auto; }
 .hero-portrait { filter: grayscale(1); transition: filter .8s, transform .8s; }
 .hero-visual:hover .hero-portrait { filter: grayscale(0); transform: scale(1.025); }
-.hero-code { position: relative; width: 100%; min-width: 0; overflow-wrap: anywhere; box-shadow: var(--shadow-editorial); }
-.hero-actions > a { border-radius: 2px; min-height: 52px; padding: 14px 22px; text-transform: uppercase; font-family: var(--font-display); box-shadow: none; }
+.hero-code { position: relative; width: 100%; min-width: 0; overflow-wrap: anywhere; background: var(--code-background); border-color: var(--code-background); box-shadow: var(--shadow-editorial); }
+.hero-code .text-muted-foreground { color: var(--code-muted); }
+.hero-code .text-primary, .hero-code .text-secondary { color: var(--code-blue); }
+.hero-code .text-chart-3 { color: var(--code-string); }
+.hero-code .text-chart-4 { color: var(--code-cyan); }
+.hero-actions > a { border-radius: 8px; min-height: 52px; padding: 14px 22px; text-transform: uppercase; font-family: var(--font-display); box-shadow: var(--shadow-editorial); }
 .hero-actions > a:first-child { border: 1px solid var(--primary); }
 .hero-actions > a:first-child:hover { background: transparent; color: var(--primary); }
 .hero-actions > a:nth-child(2) { background: transparent; }
@@ -296,17 +304,18 @@ h1, h2, h3, h4, button, a, p, span { letter-spacing: 0; }
 .section-heading > span::before { content: ''; display: inline-block; width: 26px; height: 1px; margin-right: 12px; vertical-align: middle; background: var(--primary); }
 .section-heading h2 { max-width: 900px; font-weight: 500; line-height: 1.2; }
 .section-heading p { margin-left: 0; }
-section:not(.noir-hero) .spotlight { border-radius: 8px; background-color: var(--card); }
+section:not(.noir-hero) .spotlight { border-radius: 8px; background-color: color-mix(in srgb, var(--card) 86%, transparent); backdrop-filter: blur(14px); }
 .spotlight::before { background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--primary) 8%, transparent), transparent 50%); }
 .spotlight:hover { box-shadow: var(--shadow-editorial); }
 .spotlight::after { background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--primary), transparent 70%); }
-#about .spotlight:has(p), #about .spotlight:has(img) { background: transparent; }
+#about .spotlight:has(p) { background: color-mix(in srgb, var(--card) 84%, transparent); }
+#about .spotlight:has(img) { background: transparent; }
 #about .spotlight:has(img) img { filter: grayscale(.8); transition: filter .7s, transform .7s; }
 #about .spotlight:has(img):hover img { filter: grayscale(0); }
 #education .spotlight { border-color: transparent; border-bottom-color: var(--border); border-radius: 0; background: transparent; }
 #skills .spotlight { padding: 26px; }
 #certifications .spotlight { border-top-color: color-mix(in srgb, var(--primary) 40%, transparent); }
-#profiles .spotlight { background: transparent; }
+#profiles .spotlight { background: color-mix(in srgb, var(--card) 84%, transparent); }
 #contact input, #contact textarea { border-radius: 4px; }
 #projects article img { transition: transform .8s cubic-bezier(.22,1,.36,1), filter .8s; filter: saturate(.7); }
 #projects article:hover img { filter: saturate(1); }
@@ -314,6 +323,16 @@ section:not(.noir-hero) .spotlight { border-radius: 8px; background-color: var(-
 #projects [role=group] { justify-content: flex-start; }
 #projects [role=group] button { border-radius: 3px; }
 .project-detail { animation: page-enter .7s cubic-bezier(.22,1,.36,1) both; }
+.project-detail { position: relative; isolation: isolate; overflow: hidden; }
+.ocean-section { isolation: isolate; overflow: hidden; }
+.ocean-wallpaper { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; background: var(--background); }
+.ocean-wallpaper img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .48; }
+.ocean-wallpaper::after { content: ''; position: absolute; inset: 0; background: var(--wallpaper-overlay); }
+.noir-hero .ocean-wallpaper img { opacity: .65; animation: ocean-drift 20s ease-in-out infinite alternate; }
+.ocean-section:nth-of-type(even) .ocean-wallpaper img { transform: scaleX(-1); }
+.ocean-section { border-top: 1px solid var(--border); }
+.project-detail .ocean-wallpaper img { position: absolute; top: 0; height: 1100px; }
+@keyframes ocean-drift { from { transform: scale(1.01); } to { transform: scale(1.05) translateX(-1%); } }
 .project-cover { border-radius: 4px; box-shadow: var(--shadow-editorial); }
 .project-detail h1 { max-width: 960px; font-size: 48px; font-weight: 500; line-height: 1.15; }
 .project-detail [role=tabpanel] { min-height: 200px; animation: page-enter .45s ease both; }
