@@ -117,6 +117,7 @@ export function Hero() {
         </div>
 
         <div className="hero-visual relative mx-auto w-full max-w-sm">
+          <div className="hero-photo relative">
           <div aria-hidden className="spin-slow absolute inset-0 -m-2 rounded-full border-2 border-dashed border-secondary/30" />
           <div style={par(-18)} className="relative overflow-hidden rounded-full border border-primary/30 bg-card p-2">
             <img
@@ -139,6 +140,7 @@ export function Hero() {
           ))}
           </div>
 
+          </div>
           <div className="hero-code rounded-lg border border-primary/20 bg-card/95 p-5 font-mono text-[11px] leading-relaxed">
             <div className="flex items-center gap-1.5 pb-3">
               <span className="size-2.5 rounded-full bg-chart-5/70" />
@@ -150,10 +152,10 @@ export function Hero() {
               <span className="text-secondary">const</span> <span className="text-primary">developer</span> = {"{"}
             </code>
             <code className="block pl-4 text-muted-foreground">
-              name: <span className="text-chart-3">&quot;Sai Srinivas&quot;</span>,
+              name: <span className="text-chart-3">&quot;{profile.shortName}&quot;</span>,
             </code>
             <code className="block pl-4 text-muted-foreground">
-              role: <span className="text-chart-3">&quot;Aspiring Developer&quot;</span>,
+              role: <span className="text-chart-3">&quot;{profile.role}&quot;</span>,
             </code>
             <code className="block pl-4 text-muted-foreground">
               focus: [<span className="text-chart-4">&quot;build&quot;</span>, <span className="text-chart-4">&quot;learn&quot;</span>, <span className="text-chart-4">&quot;grow&quot;</span>],
