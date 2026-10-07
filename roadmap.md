@@ -8,3 +8,8 @@
 - [x] Separate the code panel from the portrait and tighten the opening section spacing.
 - [x] Replace the resume with the newly attached PDF.
 - [x] Verify photo visibility and resume download.
+
+# Oceanic theme
+- [ ] Apply selected white and oceanic glassmorphism styling throughout.
+- [ ] Add ocean-tech wallpapers to opening, sections, and project pages.
+- [ ] Verify readability, motion, photo visibility, and navigation.
