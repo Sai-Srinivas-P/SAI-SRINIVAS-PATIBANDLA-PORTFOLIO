@@ -5,6 +5,6 @@
 - [x] Check desktop/mobile presentation and current build status.
 
 # Photo and resume update
-- [ ] Separate the code panel from the portrait and tighten the opening section spacing.
-- [ ] Replace the resume with the newly attached PDF.
-- [ ] Verify photo visibility and resume download.
+- [x] Separate the code panel from the portrait and tighten the opening section spacing.
+- [x] Replace the resume with the newly attached PDF.
+- [x] Verify photo visibility and resume download.
