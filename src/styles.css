@@ -310,8 +310,8 @@ section:not(.noir-hero) .spotlight { border-radius: 8px; background-color: color
 .spotlight::after { background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--primary), transparent 70%); }
 #about .spotlight:has(p) { background: color-mix(in srgb, var(--card) 84%, transparent); }
 #about .spotlight:has(img) { background: transparent; }
-#about .spotlight:has(img) img { filter: grayscale(.8); transition: filter .7s, transform .7s; }
-#about .spotlight:has(img):hover img { filter: grayscale(0); }
+#about .spotlight:has(img) img { transition: transform .7s; }
+#about .spotlight:has(img):hover img { transform: scale(1.03); }
 #education .spotlight { border-color: transparent; border-bottom-color: var(--border); border-radius: 0; background: transparent; }
 #skills .spotlight { padding: 26px; }
 #certifications .spotlight { border-top-color: color-mix(in srgb, var(--primary) 40%, transparent); }
