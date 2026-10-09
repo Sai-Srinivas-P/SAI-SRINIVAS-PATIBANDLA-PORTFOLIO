@@ -54,22 +54,22 @@
   --card-foreground: #1e293b;
   --popover: #ffffff;
   --popover-foreground: #1e293b;
-  --primary: #0284c7;
+  --primary: #1e3a8a;
   --primary-foreground: #ffffff;
-  --secondary: #0891b2;
+  --secondary: #2563eb;
   --secondary-foreground: #ffffff;
   --muted: #f1f5f9;
   --muted-foreground: #475569;
-  --accent: #e0f2fe;
-  --accent-foreground: #0369a1;
+  --accent: #e2eaff;
+  --accent-foreground: #1e3a8a;
   --destructive: #b91c1c;
   --destructive-foreground: #ffffff;
   --border: #e2e8f0;
   --input: #cbd5e1;
-  --ring: #0284c7;
-  --chart-1: #0284c7;
-  --chart-2: #0891b2;
-  --chart-3: #0369a1;
+  --ring: #1e3a8a;
+  --chart-1: #1e3a8a;
+  --chart-2: #2563eb;
+  --chart-3: #1e40af;
   --chart-4: #0d9488;
   --chart-5: #64748b;
   --gold-end: #06b6d4;
@@ -286,8 +286,8 @@ h1, h2, h3, h4, button, a, p, span { letter-spacing: 0; }
 .noir-hero > div { gap: 40px; }
 .hero-visual { display: grid; gap: 40px; margin-bottom: 0; }
 .hero-photo { width: min(100%, 288px); aspect-ratio: 1; margin-inline: auto; }
-.hero-portrait { filter: grayscale(1); transition: filter .8s, transform .8s; }
-.hero-visual:hover .hero-portrait { filter: grayscale(0); transform: scale(1.025); }
+.hero-portrait { transition: transform .8s; }
+.hero-visual:hover .hero-portrait { transform: scale(1.025); }
 .hero-code { position: relative; width: 100%; min-width: 0; overflow-wrap: anywhere; background: var(--code-background); border-color: var(--code-background); box-shadow: var(--shadow-editorial); }
 .hero-code .text-muted-foreground { color: var(--code-muted); }
 .hero-code .text-primary, .hero-code .text-secondary { color: var(--code-blue); }
@@ -310,8 +310,8 @@ section:not(.noir-hero) .spotlight { border-radius: 8px; background-color: color
 .spotlight::after { background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--primary), transparent 70%); }
 #about .spotlight:has(p) { background: color-mix(in srgb, var(--card) 84%, transparent); }
 #about .spotlight:has(img) { background: transparent; }
-#about .spotlight:has(img) img { filter: grayscale(.8); transition: filter .7s, transform .7s; }
-#about .spotlight:has(img):hover img { filter: grayscale(0); }
+#about .spotlight:has(img) img { transition: transform .7s; }
+#about .spotlight:has(img):hover img { transform: scale(1.03); }
 #education .spotlight { border-color: transparent; border-bottom-color: var(--border); border-radius: 0; background: transparent; }
 #skills .spotlight { padding: 26px; }
 #certifications .spotlight { border-top-color: color-mix(in srgb, var(--primary) 40%, transparent); }
