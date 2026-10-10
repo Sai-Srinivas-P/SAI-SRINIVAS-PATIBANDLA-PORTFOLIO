@@ -48,7 +48,7 @@ export const navLinks = [
 
 export const stats = [
   { value: "7", label: "Projects Completed" },
-  { value: "10", label: "Certifications" },
+  { value: "22", label: "Certifications" },
   { value: "8.0", label: "CGPA (B.Tech)" },
   { value: "Fresher", label: "Seeking Opportunities" },
 ];
