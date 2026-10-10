@@ -4,6 +4,7 @@ import eduportfolioImg from "@/assets/project-eduportfolio.jpg";
 import moviesImg from "@/assets/project-movies.jpg";
 import automotiveImg from "@/assets/project-automotive.jpg";
 import blockchainImg from "@/assets/project-blockchain.jpg";
+import atlasImg from "@/assets/project-atlas.jpg";
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 export const profile = {
@@ -46,7 +47,7 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "6", label: "Projects Completed" },
+  { value: "7", label: "Projects Completed" },
   { value: "10", label: "Certifications" },
   { value: "8.0", label: "CGPA (B.Tech)" },
   { value: "Fresher", label: "Seeking Opportunities" },
