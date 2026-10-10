@@ -4,6 +4,7 @@ import eduportfolioImg from "@/assets/project-eduportfolio.jpg";
 import moviesImg from "@/assets/project-movies.jpg";
 import automotiveImg from "@/assets/project-automotive.jpg";
 import blockchainImg from "@/assets/project-blockchain.jpg";
+import atlasImg from "@/assets/project-atlas.jpg";
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 export const profile = {
@@ -46,7 +47,7 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "6", label: "Projects Completed" },
+  { value: "7", label: "Projects Completed" },
   { value: "10", label: "Certifications" },
   { value: "8.0", label: "CGPA (B.Tech)" },
   { value: "Fresher", label: "Seeking Opportunities" },
@@ -193,7 +194,7 @@ export const projects: Project[] = [
       "JWT authentication and authorization pipeline",
       "Docker Compose for local orchestration",
     ],
-    repo: "https://github.com/Sai-Developer-1405/CARE-MIND-AI-HEALTHCARE-PLATFORM",
+    repo: "https://github.com/Sai-Srinivas-P/CARE-MIND-AI-HEALTHCARE-PLATFORM",
     disclaimer:
       "This is an educational software project. The AI assistant is not a substitute for professional medical care.",
   },
@@ -217,7 +218,7 @@ export const projects: Project[] = [
       "Persistent database storage",
       "Reusable C# database-access components",
     ],
-    repo: "https://github.com/Sai-Developer-1405/STUDENT_MANAGEMENT_SYSTEM",
+    repo: "https://github.com/Sai-Srinivas-P/STUDENT-MANAGEMENT-SYSTEM",
   },
   {
     id: "eduportfolio-vision-hub",
@@ -244,7 +245,7 @@ export const projects: Project[] = [
     ],
     highlightNote:
       "Reported improvements: faster data access, reduced faculty review workload, and reduced navigation time.",
-    repo: "https://github.com/Sai-Developer-1405/EDUPORTFOLIO-VISION-HUB",
+    repo: "https://github.com/Sai-Srinivas-P/EDUPORTFOLIO-VISION-HUB",
   },
   {
     id: "digital-movie-ticket-portal",
@@ -268,7 +269,7 @@ export const projects: Project[] = [
       "Layered backend architecture",
       "Database integration",
     ],
-    repo: "https://github.com/Sai-Developer-1405/DIGITAL-MOVIE-TICKET-PORTAL",
+    repo: "https://github.com/Sai-Srinivas-P/DIGITAL-MOVIE-TICKET-PORTAL",
   },
   {
     id: "automotive-anomaly-detection-system",
@@ -297,7 +298,7 @@ export const projects: Project[] = [
     ],
     highlightNote:
       "Built on 14,000 CAN-bus records with seven attributes, multiple ML algorithms, feature selection, and multiple evaluation metrics.",
-    repo: "https://github.com/Sai-Developer-1405/AUTOMOTIVE-ANOMALY-DETECTION-SYSTEM",
+    repo: "https://github.com/Sai-Srinivas-P/AUTOMOTIVE-ANOMALY-DETECTION-SYSTEM",
   },
   {
     id: "blockchain-organ-donation-system",
@@ -323,7 +324,40 @@ export const projects: Project[] = [
       "Decentralized storage through IPFS",
       "Ethereum development",
     ],
-    repo: "https://github.com/Sai-Developer-1405/BLOCKCHAIN-DONATION-FRAMEWORK",
+    repo: "https://github.com/Sai-Srinivas-P/BLOCKCHAIN-DONATION-FRAMEWORK",
+  },
+  {
+    id: "atlas-research-ai",
+    title: "ATLAS Research AI",
+    short:
+      "A local-first AI research assistant and RAG pipeline that answers questions from your own documents — fully private, running on local models.",
+    filters: ["AI / ML", "Full Stack", "Python"],
+    image: atlasImg,
+    tech: [
+      "Python", "FastAPI", "LangGraph", "Qdrant", "FastEmbed", "LM Studio",
+      "Next.js", "React", "TypeScript",
+    ],
+    overview:
+      "ATLAS Research AI is a local-first AI research assistant built around a retrieval-augmented generation (RAG) pipeline. It ingests documents, embeds them locally, and answers research questions with cited sources — all without sending data to external cloud services.",
+    features: [
+      "Local-first RAG pipeline over private documents",
+      "Document ingestion and chunking",
+      "Vector search with Qdrant",
+      "Local embeddings with FastEmbed",
+      "Local LLM inference via LM Studio",
+      "Agentic workflows orchestrated with LangGraph",
+      "FastAPI backend API",
+      "Next.js / React / TypeScript frontend",
+      "Source-cited answers",
+    ],
+    architecture: [
+      "FastAPI backend with LangGraph agent orchestration",
+      "Qdrant vector database for semantic retrieval",
+      "FastEmbed for on-device embeddings",
+      "LM Studio serving local LLMs",
+      "Next.js frontend consuming the API",
+    ],
+    repo: "https://github.com/Sai-Srinivas-P/ATLAS-RESEARCH-AI",
   },
 ];
 
