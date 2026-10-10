@@ -194,7 +194,7 @@ export const projects: Project[] = [
       "JWT authentication and authorization pipeline",
       "Docker Compose for local orchestration",
     ],
-    repo: "https://github.com/Sai-Developer-1405/CARE-MIND-AI-HEALTHCARE-PLATFORM",
+    repo: "https://github.com/Sai-Srinivas-P/CARE-MIND-AI-HEALTHCARE-PLATFORM",
     disclaimer:
       "This is an educational software project. The AI assistant is not a substitute for professional medical care.",
   },
@@ -218,7 +218,7 @@ export const projects: Project[] = [
       "Persistent database storage",
       "Reusable C# database-access components",
     ],
-    repo: "https://github.com/Sai-Developer-1405/STUDENT_MANAGEMENT_SYSTEM",
+    repo: "https://github.com/Sai-Srinivas-P/STUDENT-MANAGEMENT-SYSTEM",
   },
   {
     id: "eduportfolio-vision-hub",
@@ -245,7 +245,7 @@ export const projects: Project[] = [
     ],
     highlightNote:
       "Reported improvements: faster data access, reduced faculty review workload, and reduced navigation time.",
-    repo: "https://github.com/Sai-Developer-1405/EDUPORTFOLIO-VISION-HUB",
+    repo: "https://github.com/Sai-Srinivas-P/EDUPORTFOLIO-VISION-HUB",
   },
   {
     id: "digital-movie-ticket-portal",
@@ -269,7 +269,7 @@ export const projects: Project[] = [
       "Layered backend architecture",
       "Database integration",
     ],
-    repo: "https://github.com/Sai-Developer-1405/DIGITAL-MOVIE-TICKET-PORTAL",
+    repo: "https://github.com/Sai-Srinivas-P/DIGITAL-MOVIE-TICKET-PORTAL",
   },
   {
     id: "automotive-anomaly-detection-system",
@@ -298,7 +298,7 @@ export const projects: Project[] = [
     ],
     highlightNote:
       "Built on 14,000 CAN-bus records with seven attributes, multiple ML algorithms, feature selection, and multiple evaluation metrics.",
-    repo: "https://github.com/Sai-Developer-1405/AUTOMOTIVE-ANOMALY-DETECTION-SYSTEM",
+    repo: "https://github.com/Sai-Srinivas-P/AUTOMOTIVE-ANOMALY-DETECTION-SYSTEM",
   },
   {
     id: "blockchain-organ-donation-system",
@@ -324,7 +324,7 @@ export const projects: Project[] = [
       "Decentralized storage through IPFS",
       "Ethereum development",
     ],
-    repo: "https://github.com/Sai-Developer-1405/BLOCKCHAIN-DONATION-FRAMEWORK",
+    repo: "https://github.com/Sai-Srinivas-P/BLOCKCHAIN-DONATION-FRAMEWORK",
   },
 ];
 
