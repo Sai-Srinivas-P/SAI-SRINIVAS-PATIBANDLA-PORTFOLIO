@@ -110,7 +110,7 @@ export function Projects() {
 
       <Reveal className="mt-12 text-center">
         <a
-          href="https://github.com/Sai-Developer-1405"
+          href="https://github.com/Sai-Srinivas-P"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
