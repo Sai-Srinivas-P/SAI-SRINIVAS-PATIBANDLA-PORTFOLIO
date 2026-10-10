@@ -326,6 +326,39 @@ export const projects: Project[] = [
     ],
     repo: "https://github.com/Sai-Srinivas-P/BLOCKCHAIN-DONATION-FRAMEWORK",
   },
+  {
+    id: "atlas-research-ai",
+    title: "ATLAS Research AI",
+    short:
+      "A local-first AI research assistant and RAG pipeline that answers questions from your own documents — fully private, running on local models.",
+    filters: ["AI / ML", "Full Stack", "Python"],
+    image: atlasImg,
+    tech: [
+      "Python", "FastAPI", "LangGraph", "Qdrant", "FastEmbed", "LM Studio",
+      "Next.js", "React", "TypeScript",
+    ],
+    overview:
+      "ATLAS Research AI is a local-first AI research assistant built around a retrieval-augmented generation (RAG) pipeline. It ingests documents, embeds them locally, and answers research questions with cited sources — all without sending data to external cloud services.",
+    features: [
+      "Local-first RAG pipeline over private documents",
+      "Document ingestion and chunking",
+      "Vector search with Qdrant",
+      "Local embeddings with FastEmbed",
+      "Local LLM inference via LM Studio",
+      "Agentic workflows orchestrated with LangGraph",
+      "FastAPI backend API",
+      "Next.js / React / TypeScript frontend",
+      "Source-cited answers",
+    ],
+    architecture: [
+      "FastAPI backend with LangGraph agent orchestration",
+      "Qdrant vector database for semantic retrieval",
+      "FastEmbed for on-device embeddings",
+      "LM Studio serving local LLMs",
+      "Next.js frontend consuming the API",
+    ],
+    repo: "https://github.com/Sai-Srinivas-P/ATLAS-RESEARCH-AI",
+  },
 ];
 
 export const certifications = [
