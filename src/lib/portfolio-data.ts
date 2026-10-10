@@ -301,32 +301,6 @@ export const projects: Project[] = [
     repo: "https://github.com/Sai-Srinivas-P/AUTOMOTIVE-ANOMALY-DETECTION-SYSTEM",
   },
   {
-    id: "blockchain-organ-donation-system",
-    title: "Securing Organ Donation Using Blockchain",
-    short:
-      "A decentralized application concept using smart contracts, IPFS storage, and Ethereum to keep donor records secure and verifiable.",
-    filters: ["Blockchain", "Backend", "Full Stack"],
-    image: blockchainImg,
-    tech: [
-      "HTML", "CSS", "JavaScript", "Node.js", "Express.js", "Ethereum", "Solidity",
-      "Smart Contracts", "IPFS", "Web3.js", "Truffle", "Ganache",
-    ],
-    overview:
-      "A decentralized application concept focused on securing the organ donation process using blockchain-backed transparency, smart contracts, and decentralized storage.",
-    features: [
-      "Secure donor records",
-      "Recipient verification",
-      "Organ matching",
-      "Smart contracts",
-      "Blockchain-backed transparency",
-      "Tamper-resistant information",
-      "Real-time verification",
-      "Decentralized storage through IPFS",
-      "Ethereum development",
-    ],
-    repo: "https://github.com/Sai-Srinivas-P/BLOCKCHAIN-DONATION-FRAMEWORK",
-  },
-  {
     id: "atlas-research-ai",
     title: "ATLAS Research AI",
     short:
@@ -358,6 +332,32 @@ export const projects: Project[] = [
       "Next.js frontend consuming the API",
     ],
     repo: "https://github.com/Sai-Srinivas-P/ATLAS-RESEARCH-AI",
+  },
+  {
+    id: "blockchain-organ-donation-system",
+    title: "Securing Organ Donation Using Blockchain",
+    short:
+      "A decentralized application concept using smart contracts, IPFS storage, and Ethereum to keep donor records secure and verifiable.",
+    filters: ["Blockchain", "Backend", "Full Stack"],
+    image: blockchainImg,
+    tech: [
+      "HTML", "CSS", "JavaScript", "Node.js", "Express.js", "Ethereum", "Solidity",
+      "Smart Contracts", "IPFS", "Web3.js", "Truffle", "Ganache",
+    ],
+    overview:
+      "A decentralized application concept focused on securing the organ donation process using blockchain-backed transparency, smart contracts, and decentralized storage.",
+    features: [
+      "Secure donor records",
+      "Recipient verification",
+      "Organ matching",
+      "Smart contracts",
+      "Blockchain-backed transparency",
+      "Tamper-resistant information",
+      "Real-time verification",
+      "Decentralized storage through IPFS",
+      "Ethereum development",
+    ],
+    repo: "https://github.com/Sai-Srinivas-P/BLOCKCHAIN-DONATION-FRAMEWORK",
   },
 ];
 
