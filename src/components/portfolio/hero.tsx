@@ -6,10 +6,11 @@ import portraitAsset from "@/assets/sai-srinivas-portrait.png.asset.json";
 import { Wallpaper } from "./wallpaper";
 
 const heroChips = [
-  { label: ".NET", className: "left-[-2%] top-[15%]", delay: "float-slow" },
-  { label: "Python", className: "right-[8%] top-[4%]", delay: "float-slower" },
-  { label: "React", className: "left-[0%] bottom-[20%]", delay: "float-slow" },
-  { label: "AI / ML", className: "right-[-2%] bottom-[35%]", delay: "float-slower" },
+  { label: "C#/.NET", className: "left-[-2%] top-[15%]", delay: "float-slow" },
+  { label: "Java", className: "right-[8%] top-[4%]", delay: "float-slower" },
+  { label: "Python", className: "left-[0%] bottom-[20%]", delay: "float-slow" },
+  { label: "React", className: "right-[-2%] bottom-[35%]", delay: "float-slower" },
+  { label: "AI / ML", className: "left-[38%] top-[-4%]", delay: "float-slow" },
 ];
 
 export function Hero() {
